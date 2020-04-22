@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" style="background-color: #32213A;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color: #FAF3DD;">Konnect.</a>
+    </div>
+    <button class="btn btn-primary navbar-btn" style="float: right;" (click)="leaveRoom()">
+      <a href="#" style="color: white;"> Leave Room</a>
+    </button>
+  </div>
+</nav>
+<!--navbar end -->
+<!--chatbox start-->
+<div class="container-fluid" style="text-align: right; float: right;">
+  <button class="btn btn-primary" (click)="displayUser()">Users</button>
+  <div class="contain Leave Roomer" *ngFor="let user of onlineUsers">
+    <li class="list-group-item">
+      {{user}}
+    </li>
+  </div>
+</div>
+<div #chatbox class="container" style="overflow-y: scroll;height: 78%;">
+  <app-chat-bubble *ngFor="let message of messages" [message]="message"></app-chat-bubble>
+</div>
+
+<div class="container" style="float: left;">
+  <message-entry-field></message-entry-field>
+</div>

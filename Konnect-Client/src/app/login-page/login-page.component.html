@@ -1,0 +1,53 @@
+<!--navbar begin-->
+<nav class="navbar navbar-default" style="background-color: #32213A;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color: #FAF3DD;">Konnect.</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#" style="color: #FAF3DD;">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--navbar end -->
+
+<!--login form-->
+<div class="container-fluid" style="text-align: center; padding:2%; width: 50%; height: 50%; border: 1px solid black;">
+  <div class="form-group">
+    <label for="username">Enter username</label>
+    <input type="text" [(ngModel)]="userName" class="form-control" id="usr" />
+    <!-- <div class="form-group">
+          <label for="room">Enter room:</label>
+          <select class="form-control" id="room">
+            <option>Room 1</option>
+            <option>Room 2</option>
+            <option>Room 3</option>
+            <option>Room 4</option>
+          </select>
+        </div> -->
+    <div class="form-group">
+      <label for="room">Choose room:</label>
+      <select
+        [(ngModel)]="selectedRoom"
+        (change)="selected()"
+        class="form-control"
+      >
+        <option *ngFor="let item of data" [ngValue]="item">{{
+          item.name
+        }}</option>
+      </select>
+    </div>
+  </div>
+  <!--implement dropdown to select room -->
+
+  <a
+    [routerLink]="['/chatroom', { userName: userName, room: selectedRoom }]"
+    routerLinkActive="active"
+  >
+    <button class="btn btn-primary" (click)="join()">Join</button></a
+  >
+  <!-- </button> -->
+  <!--navigate to chatroom on click-->
+</div>

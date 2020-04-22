@@ -1,0 +1,28 @@
+<div *ngIf="checkIfOwner()" class="panel panel-default" style="margin: 20px">
+    <div class="panel-heading"
+        style="background-color: white; height: 10px; background-image: none; border: none; color: blue;">
+        <p>{{message.userName}} - {{message.room}}</p>
+    </div>
+    <div class="panel-body">{{message.message}}</div>
+</div>
+<div *ngIf="!checkIfOwner()" class="panel panel-default" style="margin: 20px;">
+  <div class="panel-heading"
+      style="background-color: white; height: 10px; background-image: none; border: none; color: blue;">
+      {{message.userName}} - {{message.room}}
+  </div>
+  <div class="panel-body">{{message.message}}</div>
+</div>
+<!-- "talk-bubble tri-right left-top" -->
+<!-- <div *ngIf="!checkIfOwner()" class="talk-bubble tri-right left-top" style="border-radius: 9px; text-align: center;">
+  <div class="talktext">
+    <p style="color: blue;">{{ message.userName }}</p>
+    <p>{{ message.message }}</p>
+  </div>
+</div>
+
+  <div *ngIf="checkIfOwner()" class="talk-bubble tri-right btm-right" style="border-radius: 9px; text-align: center;">
+    <div class="talktext">
+      <p style="color: blue;">{{ message.userName }}</p>
+      <p>{{ message.message }}</p>
+    </div>
+  </div>   -->

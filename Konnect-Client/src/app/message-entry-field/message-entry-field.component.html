@@ -1,0 +1,35 @@
+<div class="container">
+  <form name="myForm" #myForm="ngForm">
+      <div class="input-group" style="width: 100%;">
+          <input #message id="btn-input" type="text" class="form-control input-lg chat_input" placeholder="Write your message here..."/>
+          <span class="input-group-btn">
+          <button class="btn btn-primary btn-lg" id="btn-chat" (click)="sendMessage(message)">Send</button>
+          </span>
+          <span class="input-group-btn">
+            <button class="btn btn-primary btn-lg" id="btn-chat" (click)="sendK(message)">K.</button>
+            </span>
+    </div>
+    <!-- <div class="row">
+      <div class="col-sm-10">
+        <div class="form-group">
+          <input
+            #message
+            type="text"s
+            placeholder="Say something!"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-primary" (click)="sendMessage(textMessage)">
+          <i class="glyphicon glyphicon-send"></i>
+        </button>
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-primary" (click)="sendMessage(textMessage)">
+          K.
+        </button>
+      </div>
+    </div> -->
+  </form>
+</div>
